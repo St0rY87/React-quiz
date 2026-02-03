@@ -6,7 +6,7 @@ function Options({ dispatch, question, answer }) {
         <button
           className={`btn btn-option 
             ${answer === index ? "answer" : ""}
-            ${hasAnswered ? index === question.correctOption ? 'correct': 'wrong' : ''}
+            ${hasAnswered ? (index === question.correctOption ? "correct" : "wrong") : ""}
             `}
           onClick={() => dispatch({ type: "newAnswer", payload: index })}
           key={opt}
@@ -15,10 +15,6 @@ function Options({ dispatch, question, answer }) {
           {opt}
         </button>
       ))}
-
-      <footer>
-      {answer !== null && <button className="btn btn-ui" onClick={()=> dispatch({type: 'nextQuestion'})}>Next</button>}
-      </footer>
     </div>
   );
 }

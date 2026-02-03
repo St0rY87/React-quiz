@@ -4,6 +4,8 @@ import MainContent from "./MainContent";
 import StartScreen from "./StartScreen";
 import Question from "./Question";
 import Loader from "./Loader";
+import Footer from "./Footer";
+import NextButton from "./NextButton";
 
 // 'loading', 'error', 'ready', 'active', 'finished'
 
@@ -74,6 +76,9 @@ export default function App() {
         {status === "active" && (
           <>
           <Question question={questions[index]} answer={answer} dispatch={dispatch}/>
+          <Footer>
+            <NextButton dispatch={dispatch} answer={answer} />
+          </Footer>
           </>
         )}
       </MainContent>
